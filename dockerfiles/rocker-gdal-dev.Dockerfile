@@ -12,7 +12,7 @@ RUN export TZ=Etc/UTC
 
 
 ARG PROJ_VERSION="latest"
-ARG GDAL_VERSION="latest"
+ARG GDAL_VERSION="devel"
 ARG GEOS_VERSION="latest"
 
 COPY scripts/install_gdal-dev.sh /rocker_scripts/install_gdal-dev.sh 
