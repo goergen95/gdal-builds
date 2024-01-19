@@ -11,11 +11,11 @@ RUN export DEBIAN_FRONTEND=noninteractive
 RUN export TZ=Etc/UTC
 
 
-#ENV PROJ_VERSION=9.3.1
-#ENV GDAL_VERSION=3.8.3
-#ENV GEOS_VERSION=3.12.1
+ARG PROJ_VERSION="latest"
+ARG GDAL_VERSION="latest"
+ARG GEOS_VERSION="latest"
 
-COPY scripts/install_gdal-dev.sh /rocker_scripts/install_gdal-dev.sh
+COPY scripts/install_gdal-dev.sh /rocker_scripts/install_gdal-dev.sh -proj $PROJ_VERSION -geos $GEOS_VERSION -gdal $GDAL_VERSION
 
 RUN /rocker_scripts/install_gdal-dev.sh
 

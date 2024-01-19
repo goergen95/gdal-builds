@@ -1,6 +1,15 @@
 #!/bin/bash
 set -e
 
+while getopts proj:geos:gdal: flag
+do
+    case "${flag}" in
+        proj) PROJ_VERSION=${OPTARG};;
+        geos) GEOS_VERSION=${OPTARG};;
+        gdal) GDAL_VERSION=${OPTARG};;
+    esac
+done
+
 ## Install PROJ, GDAL, GEOS from source.
 ##
 ## 'latest' means installing the latest release version.
