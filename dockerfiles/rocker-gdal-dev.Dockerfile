@@ -15,9 +15,9 @@ ARG PROJ_VERSION="latest"
 ARG GDAL_VERSION="latest"
 ARG GEOS_VERSION="latest"
 
-COPY scripts/install_gdal-dev.sh /rocker_scripts/install_gdal-dev.sh -proj $PROJ_VERSION -geos $GEOS_VERSION -gdal $GDAL_VERSION
+COPY scripts/install_gdal-dev.sh /rocker_scripts/install_gdal-dev.sh 
 
-RUN /rocker_scripts/install_gdal-dev.sh
+RUN /rocker_scripts/install_gdal-dev.sh -proj $PROJ_VERSION -geos $GEOS_VERSION -gdal $GDAL_VERSION
 
 RUN echo "export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python3/dist-packages" >> ~/.profile
 
